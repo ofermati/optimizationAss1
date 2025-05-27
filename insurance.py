@@ -33,6 +33,7 @@ def preprocess_data(path: str, filename: str = 'insurData.csv'):
     # Binary encoding for smoker and sex columns
     df['smoker'] = df['smoker'].apply(lambda x: 1 if x == 'yes' else 0)
     df['sex'] = df['sex'].apply(lambda x: 1 if x == 'male' else 0)
+    return df
 
 # Compute MSE for constant model: alpha_0 = mean of charges
 def compute_baseline_mse(y: np.ndarray) -> float:
